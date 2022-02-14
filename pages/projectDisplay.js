@@ -3,10 +3,8 @@ import ProIco from "../public/pro.ico";
 import Navbar from "../components/Navbar";
 import {motion} from "framer-motion";
 import Image from "next/image";
-import {Card, Carousel} from "react-bootstrap";
-import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
+import {Carousel} from "react-bootstrap";
 import React, {useEffect} from "react";
-import {useRouter} from "next/router";
 
 export default function ProjectOne() {
 
@@ -59,7 +57,7 @@ export default function ProjectOne() {
             })
             .catch(err => console.log(err));
 
-    }, []);
+    }, [project]);
     return (
         <div>
             <Head>

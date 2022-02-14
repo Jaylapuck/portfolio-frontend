@@ -2,8 +2,7 @@ import Head from "next/head";
 import ProIco from "../public/pro.ico";
 import Navbar from "../components/Navbar";
 import {motion} from "framer-motion";
-import {Card, Carousel} from "react-bootstrap";
-import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
+import {Card} from "react-bootstrap";
 import Link from "next/link";
 import React, {useEffect} from "react";
 
@@ -30,7 +29,6 @@ export default function Projects(){
         }
       };
 
-    // find out how many projects there are
     useEffect(() => {
         fetch( `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects`,{
             method: "GET",
@@ -78,6 +76,7 @@ export default function Projects(){
                                         {project.attributes.smallDescription}
                                     </Card.Text>
                                 </Card.Body>
+                                {/* eslint-disable-next-line @next/next/link-passhref */}
                                 <Link href={"/projectDisplay/?id=" + project.id}>
                                     <input type="button" className="btn btn-primary m-4" value="More"/>
                                 </Link>

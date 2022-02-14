@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import ProIco from "../public/pro.ico";
 import 'bootstrap/dist/css/bootstrap.css'
 import ProgressBar from "react-bootstrap/ProgressBar";
 import {useEffect, useState} from "react";
@@ -12,7 +9,6 @@ export default function Skills(){
     const [back, setBack] = useState([]);
     const [database, setDatabase] = useState([]);
 
-    // create a motion container from bottom to top
     const container = {
         hidden: { opacity: 0 },
         visible: {
@@ -59,8 +55,6 @@ export default function Skills(){
     }, []);
 
     return(
-        // create a motion container from bottom to top
-
         <motion.div variants={container} initial="hidden" animate="visible" className="row">
             <h1 className="font-bold text-5xl">Skills</h1>
             <div className="col-md-4">

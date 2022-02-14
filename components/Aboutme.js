@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import ProIco from "../public/pro.ico";
 import {motion} from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.css'
 import {Button} from "react-bootstrap";
