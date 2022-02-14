@@ -6,6 +6,7 @@ import Image from "next/image";
 import {Card, Carousel} from "react-bootstrap";
 import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import React, {useEffect} from "react";
+import {useRouter} from "next/router";
 
 export default function ProjectOne() {
 
