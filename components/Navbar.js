@@ -1,75 +1,52 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-scroll";
-import Image from "next/image";
-import Logo from "../public/streamlineLogo.png";
+import Link from 'next/link'
 
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div>
-			<nav className=" shadow-sm fixed w-full z-10">
+			<nav className=" shadow-sm w-full z-10">
 				<div className="w-full">
 					<div className="flex items-center h-20 w-full">
 						<div className="flex items-center  mx-20  justify-between w-full">
 							<div className="flex justify-center items-center flex-shrink-0 ">
 								<h1 className=" font-bold text-xl cursor-pointer">
-									Stream<span className="text-blue-500">line</span>
+									Jeremy<span className="text-blue-500"> Forest</span>
 								</h1>
 							</div>
 							<div className="hidden md:block">
 								<div className="ml-10 flex items-baseline space-x-4">
-									<Link
-										activeClass="Home"
-										to="about"
-										smooth={true}
-										offset={50}
-										duration={500}
-										className="cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md hover:font-black"
-									>
-										Home
+									<Link href={"/"}>
+										<span>
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+												Home
+											</a>
+										</span>
 									</Link>
-									<Link
-										activeClass="about"
-										to="about"
-										smooth={true}
-										offset={50}
-										duration={500}
-										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-									>
-										About
+									<Link href={"/about"}>
+										<span>
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+												About
+											</a>
+										</span>
 									</Link>
-									<Link
-										activeClass="work"
-										to="work"
-										smooth={true}
-										offset={50}
-										duration={500}
-										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-									>
-										Projects
+									<Link href={"/projects"}>
+										<span>
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+												Projects
+											</a>
+										</span>
 									</Link>
 
 									<Link
-										activeClass="Services"
-										to="work"
-										smooth={true}
-										offset={50}
-										duration={500}
-										className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+										href={"/contact"}
 									>
-										Services
-									</Link>
-
-									<Link
-										activeClass="contact"
-										to="contact"
-										smooth={true}
-										offset={50}
-										duration={500}
-										className="cursor-pointer bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
-									>
-										Contact
+										<span>
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+												Contact
+											</a>
+										</span>
 									</Link>
 								</div>
 							</div>
@@ -137,61 +114,32 @@ function Navbar() {
 								className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
 							>
 								<Link
-									href="/home"
-									activeClass="home"
-									to="home"
-									smooth={true}
-									offset={50}
-									duration={500}
-									className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+									href={"/"}
 								>
-									Home
+									<span>
+										<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											Home
+										</a>
+									</span>
 								</Link>
 								<Link
-									href="/about"
-									activeClass="about"
-									to="about"
-									smooth={true}
-									offset={50}
-									duration={500}
-									className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+									href={"/projects"}
 								>
-									About
+									<span>
+										<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											Projects
+										</a>
+									</span>
 								</Link>
 
 								<Link
-									href="/work"
-									activeClass="work"
-									to="work"
-									smooth={true}
-									offset={50}
-									duration={500}
-									className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-								>
-									Projects
-								</Link>
-								<Link
-									href="/services"
-									activeClass="services"
-									to="services"
-									smooth={true}
-									offset={50}
-									duration={500}
-									className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-								>
-									Services
-								</Link>
-
-								<Link
-									href="/contact"
-									activeClass="work"
-									to="work"
-									smooth={true}
-									offset={50}
-									duration={500}
-									className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-								>
-									Contact
+									href={"/contact"}
+									>
+									<span>
+										<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											Contract
+										</a>
+									</span>
 								</Link>
 							</div>
 						</div>
