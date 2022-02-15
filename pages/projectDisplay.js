@@ -38,7 +38,8 @@ export default function ProjectDisplay(){
     }
     
     useEffect(() => {
-        console.log(process.env.NEXT_PUBLIC_HELLO)
+
+
         fetch(`${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects/${id}`,{
             headers: {
                 "Content-Type": "application/json",
