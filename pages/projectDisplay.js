@@ -5,6 +5,7 @@ import Image from "next/image";
 import {Carousel} from "react-bootstrap";
 import { useRouter } from 'next/router'
 import React, {useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default function ProjectDisplay(){
 

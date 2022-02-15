@@ -4,6 +4,7 @@ import {motion} from "framer-motion";
 import {Card} from "react-bootstrap";
 import Link from "next/link";
 import React, {useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default function Projects(){
 

@@ -51,8 +51,6 @@ export default function Home() {
         }
     };
 
-    console.log(process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL)
-
     return (
         <div>
             <Head>
