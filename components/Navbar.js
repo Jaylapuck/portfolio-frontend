@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from 'next/link'
 
-function Navbar() {
+export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div>
@@ -17,21 +17,32 @@ function Navbar() {
 							</div>
 							<div className="hidden md:block">
 								<div className="ml-10 flex items-baseline space-x-4">
-									<Link href={"/"}>
+									{/* eslint-disable-next-line @next/next/link-passhref */}
+									<Link
+										href={"/"}
+										passHref={true}
+									>
 										<span>
 											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 												Home
 											</a>
 										</span>
 									</Link>
-									<Link href={"/about"}>
+
+									<Link
+										href={"/about"}
+										passHref={true}
+									>
 										<span>
 											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 												About
 											</a>
 										</span>
 									</Link>
-									<Link href={"/projects"}>
+									<Link
+										href={"/projects"}
+										passHref={true}
+									>
 										<span>
 											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 												Projects
@@ -41,6 +52,7 @@ function Navbar() {
 
 									<Link
 										href={"/contact"}
+										passHref={true}
 									>
 										<span>
 											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
@@ -114,6 +126,7 @@ function Navbar() {
 								className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
 							>
 								<Link
+									passHref={true}
 									href={"/"}
 								>
 									<span>
@@ -123,6 +136,7 @@ function Navbar() {
 									</span>
 								</Link>
 								<Link
+									passHref={true}
 									href={"/projects"}
 								>
 									<span>
@@ -133,6 +147,7 @@ function Navbar() {
 								</Link>
 
 								<Link
+									passHref={true}
 									href={"/contact"}
 									>
 									<span>
@@ -150,4 +165,3 @@ function Navbar() {
 	);
 }
 
-export default Navbar;

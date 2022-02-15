@@ -1,18 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
-import ProIco from "../public/pro.ico";
 import 'bootstrap/dist/css/bootstrap.css'
-import { useState } from "react";
-import Image from "next/image";
-import {
-    LinkedinIcon,
-    LinkedinShareButton,
-    RedditIcon,
-    RedditShareButton,
-    TwitterIcon,
-    TwitterShareButton
-} from "next-share";
-import Aboutme from "../components/Aboutme";
 
 export default function Contact(){
 
@@ -20,7 +8,6 @@ export default function Contact(){
         <div>
             <Head>
                 <title>Contact</title>
-                <link rel="icon" href={ProIco} />
             </Head>
             <Navbar />
             <div className="flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2 container">

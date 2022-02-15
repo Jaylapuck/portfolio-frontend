@@ -1,5 +1,4 @@
 import Head from "next/head";
-import ProIco from "../public/pro.ico";
 import Navbar from "../components/Navbar";
 import {motion} from "framer-motion";
 import {Card} from "react-bootstrap";
@@ -46,7 +45,6 @@ export default function Projects(){
         <motion.div>
             <Head>
                 <meta name="description" content="Project Page" />
-                <link rel="icon" href={ProIco} />
                 <title>Home Page</title>
             </Head>
             <Navbar />
@@ -86,6 +84,5 @@ export default function Projects(){
                 </motion.div>
             </motion.div>
         </motion.div>
-
     )
 }

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
-import ProIco from "../public/pro.ico";
 import 'bootstrap/dist/css/bootstrap.css'
 import Image from "next/image";
 import Socials from "../components/social";
@@ -57,7 +56,6 @@ export default function Home() {
         <div>
             <Head>
                 <meta name="description" content="Home Page" />
-                <link rel="icon" href={ProIco} />
                 <title>Home Page</title>
             </Head>
             <Navbar />

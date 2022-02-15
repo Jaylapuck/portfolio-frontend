@@ -1,24 +1,19 @@
 import Head from "next/head";
-import ProIco from "../public/pro.ico";
 import Navbar from "../components/Navbar";
 import {motion} from "framer-motion";
 import Image from "next/image";
 import {Carousel} from "react-bootstrap";
+import { useRouter } from 'next/router'
 import React, {useEffect} from "react";
 
-export default function ProjectOne() {
+export default function ProjectDisplay(){
 
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
     const [image, setImage] = React.useState([]);
     const [skills, setSkills] = React.useState("");
     const [github, setGithub] = React.useState([]);
-
-    //gets the parameters from the url
-    const query = new URLSearchParams(window.location.search);
-    const project = query.get("id");
-
-
+    let id;
 
     const fadeIn = {
         hidden: {
@@ -36,9 +31,14 @@ export default function ProjectOne() {
         }
     };
 
+    if (typeof window !== "undefined") {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        id = useRouter().query.id;
+    }
+    
     useEffect(() => {
         console.log(process.env.NEXT_PUBLIC_HELLO)
-        fetch(`${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects/${project}`,{
+        fetch(`${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects/${id}`,{
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
@@ -50,19 +50,16 @@ export default function ProjectOne() {
                 setTitle(data.data.attributes.Title);
                 setDescription(data.data.attributes.Description);
                 setSkills(data.data.attributes.Skills);
-                let githubArray = data.data.attributes.GithubLinks.split(",");
-                let imageArray = data.data.attributes.image_links.split(",");
-                setImage(imageArray);
-                setGithub(githubArray);
+                setImage(data.data.attributes.image_links.split(","));
+                setGithub(data.data.attributes.GithubLinks.split(","));
             })
             .catch(err => console.log(err));
 
-    }, [project]);
+    }, [id]);
     return (
         <div>
             <Head>
                 <title>Project</title>
-                <link rel="icon" href={ProIco}/>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             </Head>
             <Navbar/>

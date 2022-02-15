@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
-import ProIco from "../public/pro.ico";
 import 'bootstrap/dist/css/bootstrap.css'
-import Image from "next/image";
 import Aboutme from "../components/Aboutme";
 import Skills from "../components/Skills";
 import {motion} from "framer-motion";
@@ -10,7 +8,6 @@ import {motion} from "framer-motion";
 
 export default function About() {
 
-    // create a motion which comes from the bottom of the screen
     const container = {
         hidden: { opacity: 0, y: -100 },
         visible: {
@@ -27,7 +24,6 @@ export default function About() {
         <div>
             <Head>
                 <meta name="description" content="Home Page" />
-                <link rel="icon" href={ProIco} />
                 <title>About Page</title>
             </Head>
             <Navbar />
