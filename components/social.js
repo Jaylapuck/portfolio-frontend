@@ -21,8 +21,6 @@ export default function Home() {
             })
     }, []);
 
-    console.log(socials);
-
     return (
         <div className="row">
             {socials.map(social => (
