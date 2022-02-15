@@ -39,7 +39,6 @@ export default function Home() {
             })
     }, []);
 
-    //create motion that comes from the right of the screen
     const container2 = {
         hidden: { opacity: 0, x: 100 },
         visible: {

@@ -46,7 +46,6 @@ export default function Aboutme(){
     }, []);
 
     return(
-        //create motion component
         <motion.div variants={container} initial="hidden" animate="visible" className="container-fluid row">
             <div className="col-sm-6 col-md-6 col-lg-6">
                 <div className="about-me">
