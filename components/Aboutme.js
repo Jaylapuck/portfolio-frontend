@@ -11,7 +11,7 @@ export default function Aboutme(){
     const [address, setAddress] = useState([]);
     const [phone, setPhone] = useState([]);
     const [aboutme, setAboutme] = useState("");
-    const link_resume = `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}uploads/Resume_English_db89bd917a.docx`
+    const link_resume = "https://res.cloudinary.com/dmu1gfkxm/raw/upload/v1644940182/Resume_English_5ce8635644_dy13yr.docx"
 
     const container = {
         hidden: { opacity: 0, y: -100 },
