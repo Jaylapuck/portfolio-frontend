@@ -76,6 +76,7 @@ export default function Home() {
                     <div className="text-3xl text-justify">
                         <p>
                             {Description}
+                            {DescriptionAboutme}
                         </p>
                     </div>
                     <Socials/>
@@ -89,21 +90,7 @@ export default function Home() {
                         </p>
                     </div>
                 </motion.div>
-                <motion.div initial="hidden"
-                            animate="visible"
-                            variants={container2}  className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="title">
-                        <h1 className="fw-bold">A little about my personal life</h1>
-                        <h4 className="text-gray-600">My Story</h4>
-                    </div>
-                    <div className="text-3xl text-left">
-                        <p>
-                            {DescriptionAboutme}
-                        </p>
-                    </div>
-                </motion.div>
             </div>
-
         </div>
     );
 }
