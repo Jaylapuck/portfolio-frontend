@@ -23,6 +23,7 @@ export default function Home() {
 
     const [DescriptionAboutme, setDescriptionAboutme] = useState(false);
     const [Description, setDescription] = useState(false);
+    const [ProfilePic, setProfilePic] = useState("");
 
     useEffect(() => {
         fetch(  `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/homes/1 `, {
@@ -36,20 +37,9 @@ export default function Home() {
             .then(data => {
                 setDescriptionAboutme(data.data.attributes.DescriptionStory);
                 setDescription(data.data.attributes.Description);
+                setProfilePic(data.data.attributes.LinkProfilePic);
             })
     }, []);
-
-    const container2 = {
-        hidden: { opacity: 0, x: 100 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                delay: 1,
-                duration: 1
-            }
-        }
-    };
 
     return (
         <div>
@@ -66,7 +56,7 @@ export default function Home() {
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h4 className="text-gray-600">Full Stack Developer</h4>
                         <Image
-                            src="https://avatars.githubusercontent.com/u/53579676?v=4"
+                            src={ProfilePic}
                             alt="Jeremy Forest"
                             width={200}
                             height={200}
