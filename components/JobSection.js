@@ -52,19 +52,19 @@ export default function Main() {
                 res.data.forEach(timeline => {
                     if(timeline.attributes.Type === "Work") {
 
-                        if(!timeline.attributes.EndDate) {
-                            work.unshift({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate, });
+                        if(timeline.attributes.EndDate === null) {
+                            work.unshift({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate });
                         }
                         else {
-                            work.push({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate, });
+                            work.push({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate });
                         }
                     }
                     else if(timeline.attributes.Type === "School") {
-                        if(!timeline.attributes.EndDate) {
-                            school.unshift({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate, });
+                        if(timeline.attributes.EndDate === null) {
+                            school.unshift({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate });
                         }
                         else {
-                            school.push({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate, });
+                            school.push({Id: timeline.id,Title: timeline.attributes.Title, Description: timeline.attributes.Description, SmallDescription: timeline.attributes.SmallDescription, StartDate: timeline.attributes.StartDate, EndDate: timeline.attributes.EndDate });
                         }
                     }
                 });
@@ -88,9 +88,9 @@ export default function Main() {
                     {work.map(item => {
                             return (
                                 <Container key={item.id}>
-                                    {item.EndDate = null ?
-                                        <YearContent startDate={item.StartDate} currentYear={true}/>:
-                                        <YearContent startDate={item.StartDate} currentYear={item.EndDate}/>
+                                    {item.EndDate == null ?
+                                        <YearContent startDate={item.StartDate} currentYear/>:
+                                        <YearContent startDate={item.StartDate} endDate={item.EndDate}/>
                                     }
                                     <BodyContent>
                                         <Section title={""}>
@@ -111,9 +111,9 @@ export default function Main() {
                     {school.map(item => {
                             return (
                                 <Container key={item.id}>
-                                    {item.EndDate = null ?
-                                        <YearContent startDate={item.StartDate} currentYear={true}/>:
-                                        <YearContent startDate={item.StartDate} currentYear={item.EndDate}/>
+                                    {item.EndDate != null ?
+                                        <YearContent startDate={item.StartDate} endDate={item.EndDate}/> :
+                                        <YearContent startDate={item.StartDate} currentYear/>
                                     }
                                     <BodyContent>
                                         <Section title={""}>
