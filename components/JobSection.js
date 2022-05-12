@@ -89,7 +89,7 @@ export default function Main() {
                             return (
                                 <Container key={item.id}>
                                     {item.EndDate = null ?
-                                        <YearContent startDate={item.StartDate} currentYear/>:
+                                        <YearContent startDate={item.StartDate} currentYear={true}/>:
                                         <YearContent startDate={item.StartDate} currentYear={item.EndDate}/>
                                     }
                                     <BodyContent>
@@ -112,7 +112,7 @@ export default function Main() {
                             return (
                                 <Container key={item.id}>
                                     {item.EndDate = null ?
-                                        <YearContent startDate={item.StartDate} currentYear/>:
+                                        <YearContent startDate={item.StartDate} currentYear={true}/>:
                                         <YearContent startDate={item.StartDate} currentYear={item.EndDate}/>
                                     }
                                     <BodyContent>
