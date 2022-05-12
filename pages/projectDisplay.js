@@ -78,7 +78,8 @@ export default function ProjectDisplay(){
                             {image.map((image, index) => {
                                 return (
                                     <Carousel.Item key={index}>
-                                        <Image src={image.toLowerCase()} alt="project" width={1200} height={500}/>
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src={image.toLowerCase()} alt="project" width={1200} height={500}/>
                                     </Carousel.Item>
                                 )
                             })}
