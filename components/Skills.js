@@ -55,52 +55,54 @@ export default function Skills(){
     }, []);
 
     return(
-        <motion.div variants={container} initial="hidden" animate="visible" className="row">
-            <h1 className="font-bold text-5xl">Skills</h1>
-            <div className="col-md-4">
-                <h1 className="text-gray-600 text-3xl">Frontend</h1>
-                {front.map(skill => {
-                    return(
-                        <div  key={skill.id} className="row">
-                            <div className="col-md-6">
-                                <h3>{skill.Name}</h3>
+        <motion.div variants={container} initial="hidden" animate="visible">
+            <h1 className="font-bold text-5xl m-0">Skills</h1>
+            <div className="row">
+                <div className="col-4">
+                    <h1 className="text-gray-600 text-3xl">Frontend</h1>
+                    {front.map(skill => {
+                        return(
+                            <div  key={skill.id} className="row">
+                                <div className="col-md-6">
+                                    <h3 className="text-2xl">{skill.Name}</h3>
+                                </div>
+                                <div className="col-md-6">
+                                    <ProgressBar striped now={skill.progress}/>
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <ProgressBar now={skill.progress}/>
+                        )
+                    })}
+                </div >
+                <div className="col-4">
+                    <h1 className="text-gray-600 text-3xl">Backend</h1>
+                    {back.map(skill => {
+                        return(
+                            <div key={skill.id} className="row">
+                                <div className="col-6">
+                                    <h3 className="text-2xl">{skill.name}</h3>
+                                </div>
+                                <div className="col-6">
+                                    <ProgressBar striped now={skill.progress}/>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </div >
-            <div className="col-md-4">
-                <h1 className="text-gray-600 text-3xl">Backend</h1>
-                {back.map(skill => {
-                    return(
-                        <div key={skill.id} className="row">
-                            <div className="col-md-6">
-                                <h3>{skill.name}</h3>
+                        )
+                    })}
+                </div>
+                <div className="col-4">
+                    <h1 className="text-gray-600 text-3xl">Database</h1>
+                    {database.map(skill => {
+                        return(
+                            <div key={skill.id} className="row">
+                                <div className="col-6">
+                                    <h3 className="text-2xl">{skill.name}</h3>
+                                </div>
+                                <div className="col-6">
+                                    <ProgressBar striped now={skill.progress}/>
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <ProgressBar now={skill.progress}/>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-            <div className="col-md-4">
-                <h1 className="text-gray-600 text-3xl">Database</h1>
-                {database.map(skill => {
-                    return(
-                        <div key={skill.id} className="row">
-                            <div className="col-6">
-                                <h3>{skill.name}</h3>
-                            </div>
-                            <div className="col-6">
-                                <ProgressBar now={skill.progress}/>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </motion.div>
     )
