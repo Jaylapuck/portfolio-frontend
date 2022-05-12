@@ -56,7 +56,7 @@ export default function Home() {
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h4 className="text-gray-600">Full Stack Developer</h4>
                         <Image
-                            src="https://res.cloudinary.com/dmu1gfkxm/image/upload/v1651699098/IMG_0151_iyi1id.jpg"
+                            src={ProfilePic}
                             alt="Jeremy Forest"
                             width={200}
                             height={200}
