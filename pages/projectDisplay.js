@@ -108,7 +108,8 @@ export default function ProjectDisplay(){
                             <div className="col-12">
                                 {github.map((github, index) => {
                                     return (
-                                        <a href={github} key={index} target="_blank" rel="noopener noreferrer">
+                                        //make image link lowercase
+                                        <a href={github.toLowerCase()} key={index}>
                                             <li className="d-flex text-center flex-column align-items-center-3xl text-3xl">{github}</li>
                                         </a>
                                     )
