@@ -56,7 +56,7 @@ export default function Projects(){
                     variants={container}
                     className="row"
                 >
-                    <h1 className="text-5xl text-center justify-center font-bold">Projects</h1>
+                    <h1 className="text-5xl text-center justify-center font-bold mt-5">Projects</h1>
                     <motion.div
                         variants={item}
                         transition={{
