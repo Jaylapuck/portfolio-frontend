@@ -56,7 +56,7 @@ export default function Home() {
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h4 className="text-gray-600">Full Stack Developer</h4>
                         <Image
-                            src={ProfilePic}
+                            src="https://res.cloudinary.com/dmu1gfkxm/image/upload/v1651699098/IMG_0151_iyi1id.jpg"
                             alt="Jeremy Forest"
                             width={200}
                             height={200}
@@ -69,7 +69,6 @@ export default function Home() {
                             {DescriptionAboutme}
                         </p>
                     </div>
-                    <Socials/>
                     <div className="text-3xl">
                         <p>
                             <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
@@ -79,6 +78,7 @@ export default function Home() {
                             </a>
                         </p>
                     </div>
+                    <Socials/>
                 </motion.div>
             </div>
         </div>

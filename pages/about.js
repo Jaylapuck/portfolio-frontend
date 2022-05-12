@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Aboutme from "../components/Aboutme";
 import Skills from "../components/Skills";
 import {motion} from "framer-motion";
+import JobSection from "../components/JobSection";
 
 
 export default function About() {
@@ -37,10 +38,9 @@ export default function About() {
                     </div>
                     <Aboutme/>
                     <Skills/>
+                    <JobSection/>
                 </motion.div>
-
             </div>
-
         </div>
     );
 }

@@ -10,16 +10,16 @@ export default function Skills(){
     const [database, setDatabase] = useState([]);
 
     const container = {
-        hidden: { opacity: 0 },
+        hidden: { opacity: 0, y: -100 },
         visible: {
-          opacity: 1,
-          transition: {
-            delay: 2.5,
-            when: "beforeChildren",
-            staggerChildren: 0.2
-          }
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 1,
+                duration: 1
+            }
         }
-      };
+    };
 
     useEffect(() => {
         fetch( `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/skills`, {
@@ -92,10 +92,10 @@ export default function Skills(){
                 {database.map(skill => {
                     return(
                         <div key={skill.id} className="row">
-                            <div className="col-md-6">
+                            <div className="col-6">
                                 <h3>{skill.name}</h3>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-6">
                                 <ProgressBar now={skill.progress}/>
                             </div>
                         </div>

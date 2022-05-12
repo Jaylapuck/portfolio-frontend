@@ -52,7 +52,7 @@ export default function Aboutme(){
                     <div>
                         <h3>About <span className="text-blue-500">Me</span> </h3>
                     </div>
-                    <p className="text-gray-600 text-2xl">
+                    <p className="text-gray-600 text-2xl text-justify">
                         {aboutme}
                     </p>
                 </div>

@@ -23,7 +23,7 @@ export default function Navbar() {
 										passHref={true}
 									>
 										<span>
-											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium text-decoration-none">
 												Home
 											</a>
 										</span>
@@ -34,7 +34,7 @@ export default function Navbar() {
 										passHref={true}
 									>
 										<span>
-											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium text-decoration-none">
 												About
 											</a>
 										</span>
@@ -44,7 +44,7 @@ export default function Navbar() {
 										passHref={true}
 									>
 										<span>
-											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium text-decoration-none">
 												Projects
 											</a>
 										</span>
@@ -55,7 +55,7 @@ export default function Navbar() {
 										passHref={true}
 									>
 										<span>
-											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+											<a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium text-decoration-none">
 												Contact
 											</a>
 										</span>

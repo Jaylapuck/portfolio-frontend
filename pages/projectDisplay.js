@@ -16,6 +16,10 @@ export default function ProjectDisplay(){
     const [github, setGithub] = React.useState([]);
     let id;
 
+    const twoColumns = {
+        columnCount: 2
+    }
+
     const fadeIn = {
         hidden: {
             opacity: 0,
@@ -38,8 +42,6 @@ export default function ProjectDisplay(){
     }
     
     useEffect(() => {
-
-
         fetch(`${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects/${id}`,{
             headers: {
                 "Content-Type": "application/json",
@@ -68,10 +70,10 @@ export default function ProjectDisplay(){
             <div className="flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2 container">
                 <motion.div initial="hidden" animate="visible" variants={fadeIn} className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
                     <h1 className="text-4xl font-bold text-center" style={fadeIn}>{title}</h1>
-                    <p className="text-center text-3xl">
+                    <p className="text-justify text-3xl">
                         {description}
                     </p>
-                    <div className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                    <div className="row bg-white px-8 pt-6 pb-8 mb-4">
                         <Carousel>
                             {image.map((image, index) => {
                                 return (
@@ -82,28 +84,39 @@ export default function ProjectDisplay(){
                             })}
                         </Carousel>
                     </div>
-                    <div className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                    <div className="row bg-white px-8 pt-6 psb-8 mb-4">
                         <div className="col-md-12">
                             <h1 className="text-4xl font-bold text-center">Languages and Frameworks</h1>
-                            <p className="text-center text-3xl">
-                                {skills}
-                            </p>
+                            <div className="text-center text-3xl">
+                                <div style={twoColumns}>
+                                    <ul>
+                                        {skills.split(",").map((skill, index) => {
+                                                return (
+                                                    <li key={index}>{skill}</li>
+                                                )
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center container">
-                        <div className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                    {github.length > 0 && (
+                    <div className="items-center container text-left">
+                        <div className="row bg-white px-8 pt-6 pb-8 mb-4">
                             <h1 className="text-4xl font-bold text-center"> Repositories</h1>
-                            <div className="col-md-12">
+                            <div className="col-12">
                                 {github.map((github, index) => {
                                     return (
                                         <a href={github} key={index} target="_blank" rel="noopener noreferrer">
-                                            <p className="text-center text-3xl">{github}</p>
+                                            <li className="d-flex text-center flex-column align-items-center-3xl text-3xl">{github}</li>
                                         </a>
                                     )
                                 })}
                             </div>
                         </div>
                     </div>
+                    )}
                 </motion.div>
             </div>
         </div>
