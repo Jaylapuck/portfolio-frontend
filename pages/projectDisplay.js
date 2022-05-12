@@ -78,7 +78,7 @@ export default function ProjectDisplay(){
                             {image.map((image, index) => {
                                 return (
                                     <Carousel.Item key={index}>
-                                        <Image src={image} alt="project" width={1200} height={500}/>
+                                        <Image src={image.toLowerCase()} alt="project" width={1200} height={500}/>
                                     </Carousel.Item>
                                 )
                             })}
