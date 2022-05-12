@@ -87,7 +87,7 @@ export default function Main() {
                 <Timeline class theme={customTheme} lang="en" dateFormat='short'>
                     {work.map(item => {
                             return (
-                                <Container key={item.id}>
+                                <Container key={item.Id}>
                                     {item.EndDate == null ?
                                         <YearContent startDate={item.StartDate} currentYear/>:
                                         <YearContent startDate={item.StartDate} endDate={item.EndDate}/>
@@ -110,11 +110,8 @@ export default function Main() {
                 <Timeline class theme={customTheme} lang="en" dateFormat='short'>
                     {school.map(item => {
                             return (
-                                <Container key={item.id}>
-                                    {item.EndDate != null ?
-                                        <YearContent startDate={item.StartDate} endDate={item.EndDate}/> :
-                                        <YearContent startDate={item.StartDate} currentYear/>
-                                    }
+                                <Container key={item.Id}>
+                                    <YearContent startDate={item.StartDate} currentYear/>
                                     <BodyContent>
                                         <Section title={""}>
                                             <Description variant='subtitle' text={item.Title} />
