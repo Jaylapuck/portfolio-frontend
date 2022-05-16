@@ -70,15 +70,15 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="text-3xl">
-                        <p>
+                        <div className="row">
                             <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
                                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Contact Me
                                 </button>
                             </a>
-                        </p>
+                            <Socials/>
+                        </div>
                     </div>
-                    <Socials/>
                 </motion.div>
             </div>
         </div>

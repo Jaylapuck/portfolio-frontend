@@ -34,7 +34,7 @@ export default function About() {
                             variants={container}  className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
                     <div className="title">
                         <h1 className="fw-bold">Jeremy Forest</h1>
-                        <h2 className="text-gray-600">Full Stack Web Developer</h2>
+                        <h2 className="text-gray-600">Full Stack Developer</h2>
                     </div>
                     <Aboutme/>
                     <Skills/>

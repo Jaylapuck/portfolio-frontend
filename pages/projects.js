@@ -64,29 +64,33 @@ export default function Projects(){
                             stiffness: 260,
                             damping: 20
                         }}
-                        className="col-6 flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2">
-                        <h1 className="text-5xl font-bold">School</h1>
-                        <p className="text-xl">
-                            Here are some of my school or personal projects.
-                        </p>
-                        <div className="row">
-                            {projects.map(project => (
-                                project.attributes.Type === "School" ? (
-                                    <Card key={project.id} className="col-sm m-2" style={{ width: '20rem' }}>
-                                        <Card.Body>
-                                            <Card.Title className="text-6xl font-bold" >{project.attributes.Title}</Card.Title>
-                                            <Card.Text className="text-2xl">
-                                                {project.attributes.smallDescription}
-                                            </Card.Text>
-                                        </Card.Body>
-                                        {/* eslint-disable-next-line @next/next/link-passhref */}
-                                        <Link href={"/projectDisplay/?id=" + project.id}>
-                                            <input type="button" className="btn btn-primary m-4" value="More"/>
-                                        </Link>
-                                    </Card>
-                                ) : null
-                            ))}
+                        className="col-6 flex justify-center items-center flex-col pt-40 text-center lg:text-8xl text-6xl space-y-2 ">
+                        <div className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                            <h1 className="text-5xl font-bold">School</h1>
+                            <p className="text-xl">
+                                Here are some of my school or personal projects.
+                            </p>
+                            <div className="row">
+                                {projects.map(project => (
+                                    project.attributes.Type === "School" ? (
+                                        <Card key={project.id} className="col-sm m-2" style={{ width: '20rem' }}>
+                                            <Card.Body>
+                                                <Card.Title className="text-6xl font-bold" >{project.attributes.Title}</Card.Title>
+                                                <Card.Text className="text-2xl">
+                                                    {project.attributes.smallDescription}
+                                                </Card.Text>
+                                            </Card.Body>
+                                            {/* eslint-disable-next-line @next/next/link-passhref */}
+                                            <Link href={"/projectDisplay/?id=" + project.id}>
+                                                <input type="button" className="btn btn-primary m-4" value="More"/>
+                                            </Link>
+                                        </Card>
+                                    ) : null
+                                ))}
+                            </div>
                         </div>
+
+
                     </motion.div>
                     <motion.div
                         variants={item}
@@ -96,29 +100,31 @@ export default function Projects(){
                             damping: 20
                         }}
                         className="col-6 flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2">
-                        <h1 className="text-5xl font-bold">Work</h1>
-                        <p className="text-xl">
-                            Here are some of my work projects.
-                        </p>
-                        <div className="row">
-                            {projects.map(project => (
-                                project.attributes.Type === "Work" ? (
+                        <div className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                            <h1 className="text-5xl font-bold">Work</h1>
+                            <p className="text-xl">
+                                Here are some of my work projects.
+                            </p>
+                            <div className="row">
+                                {projects.map(project => (
+                                    project.attributes.Type === "Work" ? (
 
-                                <Card key={project.id} className="col-sm m-2 " style={{ width: '20rem' }}>
-                                    <Card.Body>
-                                        <Card.Title className="text-6xl font-bold" >{project.attributes.Title}</Card.Title>
-                                        <Card.Text className="text-2xl">
-                                            {project.attributes.smallDescription}
-                                        </Card.Text>
-                                    </Card.Body>
+                                        <Card key={project.id} className="col-sm m-2 " style={{ width: '20rem' }}>
+                                            <Card.Body>
+                                                <Card.Title className="text-6xl font-bold" >{project.attributes.Title}</Card.Title>
+                                                <Card.Text className="text-2xl">
+                                                    {project.attributes.smallDescription}
+                                                </Card.Text>
+                                            </Card.Body>
 
-                                    {/* eslint-disable-next-line @next/next/link-passhref */}
-                                    <Link href={"/projectDisplay/?id=" + project.id}>
-                                        <input type="button" className="btn btn-primary m-4" value="More"/>
-                                    </Link>
-                                </Card>
-                                ) : null
-                            ))}
+                                            {/* eslint-disable-next-line @next/next/link-passhref */}
+                                            <Link href={"/projectDisplay/?id=" + project.id}>
+                                                <input type="button" className="btn btn-primary m-4" value="More"/>
+                                            </Link>
+                                        </Card>
+                                    ) : null
+                                ))}
+                            </div>
                         </div>
                     </motion.div>
                 </motion.div>
