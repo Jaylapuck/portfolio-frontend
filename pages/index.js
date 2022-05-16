@@ -55,13 +55,11 @@ export default function Home() {
                     <div className="title">
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h4 className="text-gray-600">Full Stack Developer</h4>
-                        <Image
-                            src={ProfilePic}
-                            alt="Jeremy Forest"
-                            width={200}
-                            height={200}
-                            className="rounded-full w-32 h-32"
-                        />
+                        {ProfilePic === "" ?
+                            <Image className="img-fluid img-fluid rounded-pill" src="/images/profile.jpg" alt="profile" width={200} height={200}/>
+                            :
+                            <Image className="img-fluid img-fluid rounded-pill" src={ProfilePic} alt="profile" width={200} height={200}/>
+                        }
                     </div>
                     <div className="text-3xl text-justify">
                         <p>
