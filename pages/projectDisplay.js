@@ -102,14 +102,13 @@ export default function ProjectDisplay(){
                             </div>
                         </div>
                     </div>
-                    {github.length > 0 && (
+                    {github.length > 1 && (
                     <div className="items-center container text-left">
                         <div className="row bg-white px-8 pt-6 pb-8 mb-4">
                             <h1 className="text-4xl font-bold text-center"> Repositories</h1>
                             <div className="col-12">
                                 {github.map((github, index) => {
                                     return (
-                                        //make image link lowercase
                                         <a href={github.toLowerCase()} key={index}>
                                             <li className="d-flex text-center flex-column align-items-center-3xl text-3xl">{github}</li>
                                         </a>
