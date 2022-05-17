@@ -124,7 +124,7 @@ export default function Projects(){
                                             </Card.Body>
 
                                             {/* eslint-disable-next-line @next/next/link-passhref */}
-                                            <Link href={"/projectDisplay/?id=" + project.id}>
+                                            <Link href={"/projects/projectDisplay?id="  + project.id}>
                                                 <input style={buttonStyle} type="button" className="btn btn-primary m-4" value="More"/>
                                             </Link>
                                         </Card>
