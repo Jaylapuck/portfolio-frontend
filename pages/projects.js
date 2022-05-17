@@ -29,6 +29,14 @@ export default function Projects(){
         }
       };
 
+    const buttonStyle = {
+        backgroundColor: '#4d00ff',
+        padding: '5px',
+        margin: '20px',
+        borderRadius: '10px',
+        boxShadow: '0px 0px 5px #000000'
+    };
+
     useEffect(() => {
         fetch( `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/projects`,{
             method: "GET",
@@ -65,7 +73,7 @@ export default function Projects(){
                             damping: 20
                         }}
                         className="col-6 flex justify-center items-center flex-col pt-40 text-center lg:text-8xl text-6xl space-y-2 ">
-                        <div className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                        <div className="bg-white rounded px-8 pt-6 pb-8 mb-4">
                             <h1 className="text-5xl font-bold">School</h1>
                             <p className="text-xl">
                                 Here are some of my school or personal projects.
@@ -80,18 +88,16 @@ export default function Projects(){
                                                     {project.attributes.smallDescription}
                                                 </Card.Text>
                                             </Card.Body>
-                                            {/* eslint-disable-next-line @next/next/link-passhref */}
-                                            <Link href={"/projectDisplay/?id=" + project.id}>
-                                                <input type="button" className="btn btn-primary m-4" value="More"/>
+                                            <Link passHref href={"/projects/projectDisplay?id=" + project.id}>
+                                                <input style={buttonStyle} type="button" className="btn btn-primary m-4" value="More"/>
                                             </Link>
                                         </Card>
                                     ) : null
                                 ))}
                             </div>
                         </div>
-
-
                     </motion.div>
+
                     <motion.div
                         variants={item}
                         transition={{
@@ -100,7 +106,7 @@ export default function Projects(){
                             damping: 20
                         }}
                         className="col-6 flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2">
-                        <div className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                        <div className="bg-white rounded px-8 pt-6 pb-8 mb-4">
                             <h1 className="text-5xl font-bold">Work</h1>
                             <p className="text-xl">
                                 Here are some of my work projects.
@@ -119,7 +125,7 @@ export default function Projects(){
 
                                             {/* eslint-disable-next-line @next/next/link-passhref */}
                                             <Link href={"/projectDisplay/?id=" + project.id}>
-                                                <input type="button" className="btn btn-primary m-4" value="More"/>
+                                                <input style={buttonStyle} type="button" className="btn btn-primary m-4" value="More"/>
                                             </Link>
                                         </Card>
                                     ) : null

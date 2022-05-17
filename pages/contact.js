@@ -2,6 +2,20 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import 'bootstrap/dist/css/bootstrap.css'
 
+const buttonStyle = {
+    backgroundColor: "#4d00ff",
+    border: "none",
+    color: "white",
+    padding: "10px",
+    textAlign: "center",
+    textDecoration: "none",
+    display: "inline-block",
+    fontSize: "1.5rem",
+    cursor: "pointer",
+    borderRadius: "10px",
+    fontWeight: "bold",
+};
+
 export default function Contact(){
 
     return(
@@ -19,7 +33,7 @@ export default function Contact(){
                     <div className="text-3xl">
                         <p>
                             <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
-                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button style={buttonStyle}>
                                     Contact Me
                                 </button>
                             </a>

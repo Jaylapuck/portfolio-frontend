@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Aboutme from "../components/Aboutme";
 import Skills from "../components/Skills";
 import {motion} from "framer-motion";
-import JobSection from "../components/JobSection";
+import JobSection from "../components/Timeline";
 
 
 export default function About() {
@@ -21,6 +21,14 @@ export default function About() {
         }
     };
 
+    const divStyle = {
+        backgroundColor: '#b3b3b3',
+        padding: '20px',
+        margin: '20px',
+        borderRadius: '10px',
+        boxShadow: '0px 0px 10px #000000'
+    };
+
     return (
         <div>
             <Head>
@@ -30,8 +38,10 @@ export default function About() {
             <Navbar />
             <div className="flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2 container">
                 <motion.div initial="hidden"
+                            style={divStyle}
                             animate="visible"
-                            variants={container}  className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+                            variants={container}
+                            className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
                     <div className="title">
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h2 className="text-gray-600">Full Stack Developer</h2>

@@ -1,6 +1,5 @@
 import {motion} from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.css'
-import {Button} from "react-bootstrap";
 import {useEffect, useState} from "react";
 
 export default function Aboutme(){
@@ -25,6 +24,42 @@ export default function Aboutme(){
         }
     };
 
+    const tableStyle = {
+        borderCollapse: "collapse",
+        border: "none",
+        width: "100%",
+        margin: "auto",
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        color: "white",
+        backgroundColor: "#4d00ff",
+        borderRadius: "10px",
+        padding: "10px"
+    };
+
+    //create a td without bold
+    const tdStyle = {
+        fontWeight: "normal"
+    };
+
+    const item = {
+        color: "#4d00ff",
+    }
+
+    const buttonStyle = {
+        backgroundColor: "#4d00ff",
+        border: "none",
+        color: "white",
+        padding: "10px",
+        textAlign: "center",
+        textDecoration: "none",
+        display: "inline-block",
+        fontSize: "1.5rem",
+        cursor: "pointer",
+        borderRadius: "10px"
+    };
+
     useEffect(() => {
         fetch( `${process.env.NEXT_PUBLIC_API_DEPLOYMENT_URL}api/abouts/1`, {
             method: "GET",
@@ -46,50 +81,50 @@ export default function Aboutme(){
     }, []);
 
     return(
-        <motion.div variants={container} initial="hidden" animate="visible" className="container-fluid row">
-            <div className="col-sm-6 col-md-6 col-lg-6">
+        <motion.div variants={container} initial="hidden" animate="visible" className="row">
+            <div className="col-6">
                 <div className="about-me">
                     <div>
-                        <h3>About <span className="text-blue-500">Me</span> </h3>
+                        <h3>About <span style={item}>Me</span> </h3>
                     </div>
-                    <p className="text-gray-600 text-2xl text-justify">
+                    <p className=" text-2xl text-justify">
                         {aboutme}
                     </p>
                 </div>
                 <div className="download-resume">
                     <a href={link_resume} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline-primary">
+                        <button style={buttonStyle}>
                             Download Resume
-                        </Button>
+                        </button>
                     </a>
                 </div>
             </div>
-            <div className="col-sm-6 col-md-6 col-lg-6">
+            <div className="col-6">
                 <div className="info">
-                    <div className="block-title">
-                        <h3 className="text-gray-600 text-2xl">Info</h3>
+                    <div>
+                        <h3>Info</h3>
                     </div>
-                    <table className="table">
+                    <table style={tableStyle} className="table">
                         <tbody>
                         <tr>
-                            <td className="font-bold text-2xl">Age</td>
-                            <td className="text-gray-600 text-2xl ">{age}</td>
+                            <td>Age</td>
+                            <td style={tdStyle}>{age}</td>
                         </tr>
                         <tr>
-                            <td className="font-bold text-2xl">Residence</td>
-                            <td className="text-gray-600 text-2xl">{residence}</td>
+                            <td>Residence</td>
+                            <td style={tdStyle}>{residence}</td>
                         </tr>
                         <tr>
-                            <td className="font-bold text-2xl">Address</td>
-                            <td className="text-gray-600 text-2xl">{address}</td>
+                            <td>Address</td>
+                            <td style={tdStyle}>{address}</td>
                         </tr>
                         <tr>
-                            <td className="font-bold text-2xl">Email</td>
-                            <td className="text-gray-600 text-2xl">{email}</td>
+                            <td>Email</td>
+                            <td style={tdStyle}>{email}</td>
                         </tr>
                         <tr>
-                            <td className="font-bold text-2xl">Phone</td>
-                            <td className="text-gray-600 text-2xl">{phone}</td>
+                            <td>Phone</td>
+                            <td style={tdStyle}>{phone}</td>
                         </tr>
                         </tbody>
                     </table>

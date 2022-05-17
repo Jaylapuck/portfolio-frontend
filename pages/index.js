@@ -6,7 +6,6 @@ import Socials from "../components/social";
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 
-
 export default function Home() {
 
     const container = {
@@ -20,6 +19,22 @@ export default function Home() {
             }
         }
     };
+    const divStyle = {
+        backgroundColor: '#b3b3b3',
+        padding: '20px',
+        margin: '20px',
+        borderRadius: '10px',
+        boxShadow: '0px 0px 10px #000000'
+    };
+
+    const buttonStyle = {
+        backgroundColor: '#4d00ff',
+        padding: '20px',
+        margin: '20px',
+        borderRadius: '10px',
+        boxShadow: '0px 0px 10px #000000'
+    };
+
 
     const [DescriptionAboutme, setDescriptionAboutme] = useState(false);
     const [Description, setDescription] = useState(false);
@@ -51,14 +66,15 @@ export default function Home() {
             <div className="flex justify-center items-center flex-col pt-40 text-center  lg:text-8xl text-6xl space-y-2 container">
                 <motion.div initial="hidden"
                             animate="visible"
+                            style={divStyle}
                             variants={container}  className="row bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
                     <div className="title">
                         <h1 className="fw-bold">Jeremy Forest</h1>
                         <h4 className="text-gray-600">Full Stack Developer</h4>
                         {ProfilePic === "" ?
-                            <Image className="img-fluid img-fluid rounded-pill" src="/images/profile.jpg" alt="profile" width={200} height={200}/>
+                            <Image className="img-fluid img-fluid rounded-pill" src="/images/profile.jpg" alt="profile" width={250} height={250}/>
                             :
-                            <Image className="img-fluid img-fluid rounded-pill" src={ProfilePic} alt="profile" width={200} height={200}/>
+                            <Image className="img-fluid img-fluid rounded-pill" src={ProfilePic} alt="profile" width={250} height={250}/>
                         }
                     </div>
                     <div className="text-3xl text-justify">
@@ -70,7 +86,7 @@ export default function Home() {
                     <div className="text-3xl">
                         <div className="row">
                             <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
-                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <button style={buttonStyle} className="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Contact Me
                                 </button>
                             </a>

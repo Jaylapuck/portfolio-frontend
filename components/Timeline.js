@@ -7,17 +7,16 @@ import {
     Description,
 } from 'vertical-timeline-component-react';
 import {motion} from "framer-motion";
-import {Button} from "react-bootstrap";
 import {useEffect, useState} from "react";
 
 export default function Main() {
     const customTheme = {
         yearColor: '#405b73',
         lineColor: '#d0cdc4',
-        dotColor: '#262626',
+        dotColor: '#4d00ff',
         borderDotColor: '#d0cdc4',
-        titleColor: '#405b73',
-        subtitleColor: '#0250c4',
+        titleColor: '#4d00ff',
+        subtitleColor: '#ffa600',
         textColor: '#262626',
     };
 
@@ -75,15 +74,12 @@ export default function Main() {
             .catch(err => console.log(err));
     }, []);
 
-    console.log(work);
-    console.log(school);
-
     return (
     <motion.div variants={container} initial="hidden" animate="visible" className="container-fluid row">
-        <h1 className="font-bold text-5xl">Timeline</h1>
+        <h1 className="font-bold text-4xl">Timeline</h1>
         <div className="row text-left">
             <div className="col-6">
-                <h3 className="font-bold text-4xl text-center">Work</h3>
+                <h3 className="font-bold text-3xl text-center">Work</h3>
                 <Timeline class theme={customTheme} lang="en" dateFormat='short'>
                     {work.map(item => {
                             return (
@@ -106,7 +102,7 @@ export default function Main() {
                 </Timeline>
             </div>
             <div className="col-6">
-                <h3 className="font-bold text-4xl text-center">School</h3>
+                <h3 className="font-bold text-3xl text-center">School</h3>
                 <Timeline class theme={customTheme} lang="en" dateFormat='short'>
                     {school.map(item => {
                             return (
