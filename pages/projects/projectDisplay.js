@@ -5,6 +5,7 @@ import {Carousel} from "react-bootstrap";
 import { useRouter } from 'next/router'
 import React, {useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.css'
+import Image from "next/image";
 
 export default function ProjectDisplay(){
 
@@ -13,8 +14,8 @@ export default function ProjectDisplay(){
     const [image, setImage] = React.useState([]);
     const [frameworks, setFrameworks] = React.useState([]);
     const [languages, setLanguages] = React.useState([]);
-    const [backend, setBackend] = React.useState([]);
-    const [frontend, setFrontend] = React.useState([]);
+    const [backend, setBackend] = React.useState(null);
+    const [frontend, setFrontend] = React.useState(null);
     const [libraries, setLiraries] = React.useState([]);
 
     let id;
@@ -67,13 +68,13 @@ export default function ProjectDisplay(){
                 setFrameworks(Frameworks);
                 setLanguages(Languages);
                 setLiraries(Libraries);
-
-                console.log(libraries)
-
             })
             .catch(err => console.log(err));
 
     }, [id]);
+
+    console.log(backend);
+    console.log(frontend);
 
     const divStyle = {
         backgroundColor: '#b3b3b3',
@@ -186,17 +187,22 @@ export default function ProjectDisplay(){
                         <div className="col-md-2"></div>
                     </div>
 
-                    <h1 className="text-3xl font-bold">Repositories</h1>
-                    <div className="row bg-white px-8 pt-6 psb-8 mb-4">
-                        <ul className="text-3xl">
-                            <a style={buttonStyle} className="col-4 btn btn-primary text-3xl m-2" href={frontend}>
-                                Frontend
-                            </a>
-                            <a style={buttonStyle} className="col-4 btn btn-primary text-3xl m-2" href={backend}>
-                                Backend
-                            </a>
-                        </ul>
-                    </div>
+                    {frontend === null && backend === null ? null :
+                        <div>
+                            <h1 className="text-3xl font-bold">Repositories</h1>
+                            <div className="row bg-white px-8 pt-6 psb-8 mb-4">
+                                <ul className="text-3xl">
+                                    <a style={buttonStyle} className="col-4 btn btn-primary text-3xl m-2" href={frontend}>
+                                        Frontend
+                                    </a>
+                                    <a style={buttonStyle} className="col-4 btn btn-primary text-3xl m-2" href={backend}>
+                                        Backend
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+
                 </motion.div>
             </div>
         </div>

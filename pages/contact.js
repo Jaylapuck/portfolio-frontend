@@ -32,7 +32,7 @@ export default function Contact(){
                     </p>
                     <div className="text-3xl">
                         <p>
-                            <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
+                            <a href="mailto:jeremy_forest201@gmail.com" className="text-blue-500">
                                 <button style={buttonStyle}>
                                     Contact Me
                                 </button>

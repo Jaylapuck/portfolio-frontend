@@ -85,7 +85,7 @@ export default function Home() {
                     </div>
                     <div className="text-3xl">
                         <div className="row">
-                            <a href="mailto:ethylamide@icloud.com" className="text-blue-500">
+                            <a href="mailto:jeremy_forest201@gmail.com" className="text-blue-500">
                                 <button style={buttonStyle} className="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Contact Me
                                 </button>
